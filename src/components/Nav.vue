@@ -6,11 +6,11 @@
       <div class="collapse navbar-collapse">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <router-link :to="{name:'Login'}"><a href="#" class="nav-link">Login</a></router-link>
+            <router-link :to="{name:'Login'}"><a href="#" class="nav-link">login</a></router-link>
 
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">Sign out</a>
+            <a href="#" class="nav-link">sign out</a>
           </li>
         </ul>
       </div>
