@@ -31,10 +31,10 @@ export default {
       const response = await axios.post('auth/signin', {
         username: this.username,
         password: this.password,
-
       });
       localStorage.setItem('token', response.data.accessToken)
       this.$store.dispatch('user', response.data.user)
+
       this.$router.push('/');
     }
   }
