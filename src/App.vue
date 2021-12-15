@@ -3,7 +3,7 @@
     <Nav/>
     <div class="auth-wrapper">
       <div class="auth-inner">
-       <router-view />
+        <router-view/>
       </div>
     </div>
   </div>
@@ -11,12 +11,17 @@
 
 <script>
 import Nav from './components/Nav'
+import axios from "axios";
 
 export default {
   name: 'App',
   components: {
     Nav,
+  },
 
+  async created() {
+    const response = await axios.get('users/get/devices');
+    this.$store.dispatch('user', response.data)
   }
 }
 </script>

@@ -47,7 +47,7 @@ export default {
       if (this.reapet_password !== this.password) {
         this.validation = true
       } else {
-        await axios.post('signup', {
+        await axios.post('auth/signup', {
           username: this.user_name,
           password: this.password,
           email: this.email,

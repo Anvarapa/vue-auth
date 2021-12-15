@@ -3,6 +3,6 @@ module.exports = {
       ? '/vue-auth/'
       : '/',
   devServer:{
-    proxy: 'https://mylifeline.tech/api/auth/'
+    proxy: 'https://mylifeline.tech/api/'
   }
 };

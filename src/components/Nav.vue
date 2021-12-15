@@ -1,16 +1,22 @@
 <template>
   <nav class="navbar navbar-expand navbar-light fixed-top">
     <div class="container">
-      <router-link :to="{name:'Home'}"><a href="#" class="navbar-brand">HOME</a></router-link>
+      <router-link class="navbar-brand" :to="{name:'Home'}">HOME</router-link>
 
       <div class="collapse navbar-collapse">
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav ml-auto" v-if="!user">
           <li class="nav-item">
-            <router-link :to="{name:'Login'}"><a href="#" class="nav-link">login</a></router-link>
+            <router-link class="nav-link" :to="{name:'Login'}">login</router-link>
 
           </li>
           <li class="nav-item">
-            <a href="#" class="nav-link">sign out</a>
+            <router-link class="nav-link" :to="{name:'Register'}">sign up</router-link>
+          </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto" v-if="user">
+          <li class="nav-item">
+            <a href="javascript:void(0)" @click="handleClick" class="nav-link">logout</a>
           </li>
         </ul>
       </div>
@@ -19,8 +25,20 @@
 </template>
 
 <script>
+import {mapGetters} from 'vuex'
 export default {
-  name: "Nav"
+  name: "Nav",
+
+  methods: {
+    handleClick() {
+      localStorage.removeItem('token')
+      this.$store.dispatch('user', null)
+      this.$router.push('/')
+    }
+  },
+  computed:{
+    ...mapGetters(['user'])
+  }
 }
 </script>
 
