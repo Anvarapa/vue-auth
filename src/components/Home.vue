@@ -9,6 +9,8 @@
 </template>
 
 <script>
+
+console.log("home page");
 import {mapGetters} from 'vuex'
 export default {
   name: "Home",

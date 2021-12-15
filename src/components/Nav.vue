@@ -17,7 +17,7 @@
 
         <ul class="navbar-nav ml-auto" v-if="user">
           <li class="nav-item">
-            <a href="javascript:void(0)" @click="handleClick" class="nav-link">logout</a>
+            <a href="javascript:void(0)" @click="handleClick()" class="nav-link">logout</a>
           </li>
         </ul>
       </div>
@@ -34,7 +34,7 @@ export default {
     handleClick() {
       localStorage.removeItem('token')
       this.$store.dispatch('user', null)
-      this.$router.push('/')
+      // this.$router.push('/')
     }
   },
   computed:{

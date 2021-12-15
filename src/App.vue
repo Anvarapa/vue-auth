@@ -20,8 +20,14 @@ export default {
   },
 
   async created() {
-    const response = await axios.get('users/get/devices');
-    this.$store.dispatch('user', response.data)
+    if(localStorage.getItem('token') === null || localStorage.getItem('token').length === 0)
+    {
+      console.log('No token provided');      
+    }else
+    {
+      const response = await axios.get('users/get/devices');
+      this.$store.dispatch('user', response.data)
+    }
   }
 }
 </script>
