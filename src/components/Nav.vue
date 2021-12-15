@@ -7,12 +7,13 @@
         <ul class="navbar-nav ml-auto" v-if="!user">
           <li class="nav-item">
             <router-link class="nav-link" :to="{name:'Login'}">login</router-link>
-
           </li>
           <li class="nav-item">
             <router-link class="nav-link" :to="{name:'Register'}">sign up</router-link>
           </li>
         </ul>
+
+
 
         <ul class="navbar-nav ml-auto" v-if="user">
           <li class="nav-item">

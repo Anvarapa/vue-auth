@@ -34,7 +34,7 @@ export default {
 
       });
       localStorage.setItem('token', response.data.accessToken)
-      this.$store.dispatch('user', response.data)
+      this.$store.dispatch('user', response.data.user)
       this.$router.push('/');
     }
   }
